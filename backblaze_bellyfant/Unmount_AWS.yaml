@@ -1,0 +1,24 @@
+# Anchorpoint Markup Language
+# Predefined Variables: e.g. ${path}
+# Environment Variables: e.g. ${MY_VARIABLE}
+# Full documentation: https://docs.anchorpoint.app/Actions/Reference
+
+version: 1.0
+action:
+  name: Unmount Bellyfant Drive
+
+  version: 1
+  id: "ap::rclone::awss3unmount"
+  category: user
+  type: python
+  author: Matthäus Niedoba
+  description: "Unmounts the Bellyfant Drive"
+  icon:
+    path: backblaze.svg
+
+  script: "Unmount_AWS.py"
+
+  register:
+    folder:
+      enable: true
+      filter: "*" 

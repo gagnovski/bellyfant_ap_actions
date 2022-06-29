@@ -1,0 +1,25 @@
+# Anchorpoint Markup Language
+# Predefined Variables: e.g. ${path}
+# Environment Variables: e.g. ${MY_VARIABLE}
+# Full documentation: https://docs.anchorpoint.app/Actions/Reference
+
+version: 1.0
+action:
+  name: Create Folder Structures
+
+  version: 1
+  id: ap::package::belly_folder_structures
+  category: templates/folder
+  type: package
+  enable: true
+  author: Jason Gagnon
+  description: Creates standardized project folder structures
+ 
+  icon:
+    path: "folderTemplates.svg"
+
+  platforms:
+    - win
+
+  actions:
+    - ap::templates::create-custom-templates

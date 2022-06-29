@@ -1,0 +1,31 @@
+# Anchorpoint Markup Language
+# Predefined Variables: e.g. ${path}
+# Environment Variables: e.g. ${MY_VARIABLE}
+# Full documentation: https://docs.anchorpoint.app/Actions/Reference
+
+version: 1.0
+action:
+  name: Build Folder Structures
+
+  version: 1
+  id: "ap::templates::create-custom-templates"
+  category: user
+  type: python
+  author: Jason Gagnon
+  description: "Build Folder Structures"
+  icon:
+    path: :/icons/folderGrey.svg
+
+  inputs:
+    project_template: templates/projects
+    asset_template: templates/assets
+    episode_template: templates/episodes
+    sequence_template: templates/sequences
+    shot_template: templates/shots
+    
+  script: "folder_templates.py"
+
+  register:
+    folder:
+      enable: true
+      filter: "*/shots;*/sequences;*/episodes;*/assets;*jobs;*:/"

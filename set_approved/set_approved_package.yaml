@@ -1,0 +1,25 @@
+# Anchorpoint Markup Language
+# Predefined Variables: e.g. ${path}
+# Environment Variables: e.g. ${MY_VARIABLE}
+# Full documentation: https://docs.anchorpoint.app/Actions/Reference
+
+version: 1.0
+action:
+  name: Set Approval Status
+
+  version: 1
+  id: ap::package::set-as-approved-version
+  category: templates/folder
+  type: package
+  enable: true
+  author: Jason Gagnon
+  description: Sets files as approved in the standard folder structure
+ 
+  icon:
+    path: "folderTemplates.svg"
+
+  platforms:
+    - win
+
+  actions:
+    - ap::templates::set-as-approved-version

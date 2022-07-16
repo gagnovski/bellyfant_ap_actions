@@ -16,7 +16,7 @@ ASSETS_FOLDER = "assets"
 SEQUENCES_FOLDER = "sequences"
 EPISODES_FOLDER = "episodes"
 SHOTS_FOLDER = "shots"
-EMPTY_FILE = "jobfile"
+EMPTY_FILE = ".jobfile"
 
 ATTRIBUTE_VERSION_STATUS = "Version Status"
 ATTRIBUTE_APPROVED_VERSION = "Approved Version"
@@ -243,7 +243,6 @@ class CreateFolderTemplate:
                 directory (str): Path for the directory to create
         """
 
-        print (directory)
         if not os.path.exists(directory):
             os.makedirs(directory)
 

@@ -317,6 +317,8 @@ class CreateFolderTemplate:
         """ Create the folder structure based on the current context the user is in
         """
 
+        progress = ap.Progress("Building Folders",infinite = True)
+
         if self._folder_type == PROJECTS_FOLDER:
             start_folder = os.path.join(PROJECTS_TEMPLATE, os.listdir(PROJECTS_TEMPLATE)[0]).replace(os.path.sep, "/")
             self._build_folders(folder_type=self._context.relative_path, template=PROJECTS_TEMPLATE, path=start_folder)
@@ -347,10 +349,11 @@ class CreateFolderTemplate:
 
             start_folder = os.path.join(SHOTS_TEMPLATE, os.listdir(SHOTS_TEMPLATE)[0]).replace(os.path.sep, "/")
             build_folder = os.path.join(EPISODES_FOLDER, self._parent_folder, SHOTS_FOLDER).replace(os.path.sep, "/")
-            self._build_folders(folder_type=build_folder, template=SHOTS_TEMPLATE, path=start_folder, increment_offset=10, capitalize=True)
+            self._context.run_async(self._build_folders, folder_type=build_folder, template=SHOTS_TEMPLATE, path=start_folder, increment_offset=10, capitalize=True)
+            #self._build_folders(folder_type=build_folder, template=SHOTS_TEMPLATE, path=start_folder, increment_offset=10, capitalize=True)
             self._ui.show_success("Shot Folder Created Successful")
 
-        #self._progress.finish()
+        progress.finish()
                 
 CreateFolderTemplate()
 

@@ -267,9 +267,7 @@ class CreateFolderTemplate:
                 source_destination = os.path.join(source_root, file).replace(os.path.sep, "/")
                 target_destination = os.path.join(target_root, resolved_file_name).replace(os.path.sep, "/")
 
-                print (file)
                 if file == "emptyfile":
-                    print ("Found the EmptyFile... let's skip it...")
                     continue
 
                 if not os.path.exists(target_destination):

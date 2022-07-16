@@ -208,7 +208,8 @@ class CreateFolderTemplate:
             self._parent_folder = Path(self._context.path).parent.absolute()
             self.create_project_dialog()
 
-        if self._context.relative_path.endswith(ASSETS_FOLDER):
+        #if self._context.relative_path.endswith(ASSETS_FOLDER):
+        if self._context.filename == ASSETS_FOLDER:
             self._folder_type = ASSETS_FOLDER
             self._parent_folder = Path(self._context.path).parent.absolute()
             self.create_asset_dialog()
@@ -245,7 +246,7 @@ class CreateFolderTemplate:
 
             empty_file = os.path.join(directory, EMPTY_FILE).replace(os.path.sep, "/")
             Path(empty_file).touch()
-            os.system("attrib +h {}". format(empty_file))
+            #os.system("attrib +h {}". format(empty_file))
 
     def _copy_source_files(self, source_root, source_files, target_root):
         """ Copies the any source files over that should come as a starting point file

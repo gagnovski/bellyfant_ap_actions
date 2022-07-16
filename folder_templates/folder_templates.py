@@ -243,12 +243,13 @@ class CreateFolderTemplate:
                 directory (str): Path for the directory to create
         """
 
+        print (directory)
         if not os.path.exists(directory):
             os.makedirs(directory)
 
             empty_file = os.path.join(directory, EMPTY_FILE).replace(os.path.sep, "/")
             Path(empty_file).touch()
-            #os.system("attrib +h {}". format(empty_file))
+            os.system("attrib +h {}". format(empty_file))
 
     def _copy_source_files(self, source_root, source_files, target_root):
         """ Copies the any source files over that should come as a starting point file

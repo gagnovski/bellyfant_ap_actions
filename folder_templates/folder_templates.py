@@ -214,20 +214,22 @@ class CreateFolderTemplate:
             self._parent_folder = Path(self._context.path).parent.absolute()
             self.create_asset_dialog()
 
-        if self._context.relative_path.endswith(EPISODES_FOLDER):
+        #if self._context.relative_path.endswith(EPISODES_FOLDER):
+        if self._context.filename == EPISODES_FOLDER:
             self._folder_type = EPISODES_FOLDER
             self._parent_folder = Path(self._context.path).parent.absolute()
             self.create_episode_dialog()
 
-        if self._context.relative_path.endswith(SEQUENCES_FOLDER):
+        #if self._context.relative_path.endswith(SEQUENCES_FOLDER):
+        if self._context.filename == SEQUENCES_FOLDER:
             self._folder_type = SEQUENCES_FOLDER
             self._parent_folder = Path(self._context.path).parent.absolute()
             self._episode_name  = str(self._parent_folder).split(os.path.sep)[-1]
             self._get_folder_count(self._context.path, increment_offset=10)
             self.create_sequence_dialog()
 
-        if self._context.relative_path.endswith(SHOTS_FOLDER):
-
+        #if self._context.relative_path.endswith(SHOTS_FOLDER):
+        if self._context.filename == SHOTS_FOLDER:
             self._folder_type = SHOTS_FOLDER
             self._parent_folder = Path(self._context.path).parent.absolute()
             self._sequence_name  = str(self._parent_folder).split(os.path.sep)[-1]

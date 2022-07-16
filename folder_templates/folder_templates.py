@@ -48,6 +48,8 @@ class CreateFolderTemplate:
         self._build_type = "char"
         #self._progress = ap.Progress("Custom Folder Creation")
 
+        print (self._context)
+
         self._display_folder_context()
 
     def _enable_shotoverride(self, dialog, value):

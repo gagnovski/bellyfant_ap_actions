@@ -79,6 +79,15 @@ class SetApprovedVersion:
                 target_filename = self._resolve_approved_file()
                 target_path = os.path.join(episode_folder, target_filename).replace(os.path.sep, "/")
 
+            # Check if the filename is an mov and if it's a playblast file, and copy to the main playblast folder for the episode
+            if self._filename_suffix == "mov" and "render" in self._context.path:
+                source_file = os.path.join(self._version_folder, (self._version_filename + "." + self._filename_suffix) )
+                source_path = os.path.join(self._version_folder, source_file).replace(os.path.sep, "/")
+                episode_folder = self._context.path.split("/")
+                episode_folder = os.path.join(episode_folder[0], episode_folder[1], episode_folder[2], episode_folder[3], "finals")
+                target_filename = self._resolve_approved_file()
+                target_path = os.path.join(episode_folder, target_filename).replace(os.path.sep, "/")
+
             shutil.copyfile(source_path, target_path)
 
             for file in os.listdir(self._version_folder):

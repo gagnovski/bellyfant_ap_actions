@@ -221,10 +221,13 @@ class CreateFolderTemplate:
             self.create_episode_dialog()
 
         #if self._context.relative_path.endswith(SEQUENCES_FOLDER):
-        if self._context.relative_path == SEQUENCES_FOLDER:
+        if self._context.path.endswith(SEQUENCES_FOLDER):
             self._folder_type = SEQUENCES_FOLDER
             self._parent_folder = Path(self._context.path).parent.absolute()
             self._episode_name  = str(self._parent_folder).split(os.path.sep)[-1]
+
+            print (self._parent_folder)
+            print (self._episode_name)
             self._get_folder_count(self._context.path, increment_offset=10)
             self.create_sequence_dialog()
 

@@ -48,7 +48,7 @@ class CreateFolderTemplate:
         self._build_type = "char"
         #self._progress = ap.Progress("Custom Folder Creation")
 
-        print (self._context)
+        #print (self._context)
 
         self._display_folder_context()
 
@@ -209,7 +209,7 @@ class CreateFolderTemplate:
             self.create_project_dialog()
 
         #if self._context.relative_path.endswith(ASSETS_FOLDER):
-        if self._context.filename == ASSETS_FOLDER:
+        if self._context.relative_path == ASSETS_FOLDER:
             self._folder_type = ASSETS_FOLDER
             self._parent_folder = Path(self._context.path).parent.absolute()
             self.create_asset_dialog()
@@ -218,11 +218,10 @@ class CreateFolderTemplate:
         if self._context.relative_path == EPISODES_FOLDER:
             self._folder_type = EPISODES_FOLDER
             self._parent_folder = Path(self._context.path).parent.absolute()
-            print ("IN EPISODES...")
             self.create_episode_dialog()
 
         #if self._context.relative_path.endswith(SEQUENCES_FOLDER):
-        if self._context.filename == SEQUENCES_FOLDER:
+        if self._context.relative_path == SEQUENCES_FOLDER:
             self._folder_type = SEQUENCES_FOLDER
             self._parent_folder = Path(self._context.path).parent.absolute()
             self._episode_name  = str(self._parent_folder).split(os.path.sep)[-1]
@@ -230,7 +229,7 @@ class CreateFolderTemplate:
             self.create_sequence_dialog()
 
         #if self._context.relative_path.endswith(SHOTS_FOLDER):
-        if self._context.filename == SHOTS_FOLDER:
+        if self._context.relative_path == SHOTS_FOLDER:
             self._folder_type = SHOTS_FOLDER
             self._parent_folder = Path(self._context.path).parent.absolute()
             self._sequence_name  = str(self._parent_folder).split(os.path.sep)[-1]

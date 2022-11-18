@@ -48,9 +48,9 @@ class CreateFolderTemplate:
         self._build_type = "char"
         #self._progress = ap.Progress("Custom Folder Creation")
 
-        print (self._context)
+        #print (self._context)
 
-        #self._display_folder_context()
+        self._display_folder_context()
 
     def _enable_shotoverride(self, dialog, value):
         if value:
@@ -218,6 +218,7 @@ class CreateFolderTemplate:
         if self._context.filename == EPISODES_FOLDER:
             self._folder_type = EPISODES_FOLDER
             self._parent_folder = Path(self._context.path).parent.absolute()
+            print ("IN EPISODES...")
             self.create_episode_dialog()
 
         #if self._context.relative_path.endswith(SEQUENCES_FOLDER):

@@ -97,7 +97,7 @@ class SetApprovedVersion:
 
             
             apsync.set_attribute_text(target_path, ATTRIBUTE_APPROVED_VERSION, self._approved_version)
-            apsync.set_attribute_tag(source_path, ATTRIBUTE_VERSION_STATUS, APPROVED_STATUS, apsync.AttributeType.single_choice_tag, True, apsync.TagColor.green)
+            apsync.set_attribute_tag(source_path, ATTRIBUTE_VERSION_STATUS, APPROVED_STATUS, apsync.AttributeType.single_choice_tag, None, True, apsync.TagColor.green)
 
             self._ui.show_success("Approval Successful!")
         except Exception:

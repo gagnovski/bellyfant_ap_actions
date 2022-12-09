@@ -48,7 +48,7 @@ class CreateFolderTemplate:
         self._build_type = "char"
         #self._progress = ap.Progress("Custom Folder Creation")
 
-        print (self._context)
+        #print (self._context)
 
         self._display_folder_context()
 

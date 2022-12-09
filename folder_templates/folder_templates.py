@@ -274,7 +274,7 @@ class CreateFolderTemplate:
                     #apsync.copy_file(source_destination, target_destination, True)
 
                     if os.path.dirname(target_destination).endswith("scenes"):
-                        apsync.set_attribute_text(target_destination, ATTRIBUTE_APPROVED_VERSION, "v0001", True)
+                        apsync.set_attribute_text(target_destination, ATTRIBUTE_APPROVED_VERSION, "v0001", None, True)
 
                     if os.path.dirname(target_destination).endswith("versions"):
                         apsync.add_attribute_tag(target_destination, ATTRIBUTE_VERSION_STATUS, APPROVED_STATUS, apsync.AttributeType.single_choice_tag, True, apsync.TagColor.green)

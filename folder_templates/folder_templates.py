@@ -48,7 +48,7 @@ class CreateFolderTemplate:
         self._build_type = "char"
         #self._progress = ap.Progress("Custom Folder Creation")
 
-        #print (self._context)
+        print (self._context)
 
         self._display_folder_context()
 
@@ -277,7 +277,7 @@ class CreateFolderTemplate:
                         apsync.set_attribute_text(target_destination, ATTRIBUTE_APPROVED_VERSION, "v0001", None, True)
 
                     if os.path.dirname(target_destination).endswith("versions"):
-                        apsync.add_attribute_tag(target_destination, ATTRIBUTE_VERSION_STATUS, APPROVED_STATUS, apsync.AttributeType.single_choice_tag, True, apsync.TagColor.green)
+                        apsync.add_attribute_tag(target_destination, ATTRIBUTE_VERSION_STATUS, APPROVED_STATUS, apsync.AttributeType.single_choice_tag, None, True, apsync.TagColor.green)
 
 
     def _build_folders(self, folder_type=None, template=None, path=None, increment_offset=10, capitalize=False):

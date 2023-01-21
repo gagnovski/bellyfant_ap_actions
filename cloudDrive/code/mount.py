@@ -149,6 +149,28 @@ def setup_mount(drive, workspace_id, configuration):
                 os.mkdir(drive)
         config_arguments.append(drive)
 
+    # Bellyfant working arguments
+    # arguments = [
+    #     "--vfs-cache-mode",
+    #     "full",
+    #     "--vfs-cache-max-age",
+    #     "10000h",
+    #     "--transfers",
+    #     "4",
+    #     "--vfs-read-chunk-size",
+    #     "512M",
+    #     "--network-mode",
+    #     "--use-server-modtime",
+    #     "--fast-list",
+    #     "--poll-interval",
+    #     "10s",
+    #     "--cache-dir",
+    #     cache_path,
+    #     "--volname=Bellyfant",
+    #     "--file-perms=0777",
+    #     "--dir-perms=0777"
+    # ]
+
     rclone_arguments = [
         "--vfs-cache-mode",
         "full",
@@ -158,20 +180,24 @@ def setup_mount(drive, workspace_id, configuration):
         "512M",
         "--vfs-fast-fingerprint",
         "--transfers",
-        "10",
+        "4",
         "--network-mode",
         "--use-server-modtime",
+        "--fast-list",
+        "--poll-interval",
+        "10s",
         "--cache-dir",
         cache_path,
-        "--dir-cache-time",
-        "5s",
+        # "--dir-cache-time",
+        # "5s",
         "--volname=Anchorpoint",
         "--file-perms=0777",
-        "--use-json-log",
-        "--stats",
-        "1s",
-        "--log-level",
-        "INFO"
+        "--dir-perms=0777"
+        # "--use-json-log",
+        # "--stats",
+        # "1s",
+        # "--log-level",
+        # "INFO"
     ]
 
     arguments = base_arguments + config_arguments + rclone_arguments

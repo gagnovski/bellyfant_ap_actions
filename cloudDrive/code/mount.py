@@ -234,7 +234,7 @@ def store_auto_mount(success: bool, drive: str, workspace_id: str):
 
 def run_rclone(arguments, drive, workspace_id, startupinfo=None):
     ui = ap.UI()
-    prepare_mount_progress = ap.Progress("Preparing Mount", infinite=True)
+    #prepare_mount_progress = ap.Progress("Preparing Mount", infinite=True)
     rclone_success = "The service rclone has been started"
     rlcone_wrong_credentials = "SignatureDoesNotMatch"
     rlcone_wrong_access_key = "InvalidAccessKeyId"
@@ -271,8 +271,8 @@ def run_rclone(arguments, drive, workspace_id, startupinfo=None):
             store_auto_mount(False, drive, workspace_id)
             return
         elif rclone_success in line:            
-            prepare_mount_progress.finish()
-            prepare_mount_progress = None
+            #prepare_mount_progress.finish()
+            #prepare_mount_progress = None
             if not isWin() and "reload_drives" in dir(ui):
                 ui.reload_drives()
             store_auto_mount(True, drive, workspace_id)

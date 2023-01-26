@@ -241,7 +241,7 @@ def run_rclone(arguments, drive, workspace_id, startupinfo=None):
     count_msg = "queuing for upload"
     upload_succeeded_msg = "upload succeeded"
     progress = None
-    #global_progress = ap.Progress("Mounting Cloud THE CLOUD", show_loading_screen=True)
+    global_progress = ap.Progress("Mounting Bellyfant Drive", show_loading_screen=True)
     
     p = subprocess.Popen(
         args=arguments,
@@ -258,7 +258,6 @@ def run_rclone(arguments, drive, workspace_id, startupinfo=None):
     
     for line in p.stdout:
         myjson = is_json(line)
-        print ("HELLO JOCHEN! --------------------------------------------------------------------------------")
         
         if count_msg in line:
             count = add_to_count(count, 1)
@@ -277,7 +276,7 @@ def run_rclone(arguments, drive, workspace_id, startupinfo=None):
                 ui.reload_drives()
             store_auto_mount(True, drive, workspace_id)
             ui.show_success("Mount Successful")
-            #global_progress.finish()
+            global_progress.finish()
             ui.reload()
 
         elif rlcone_wrong_credentials in line:

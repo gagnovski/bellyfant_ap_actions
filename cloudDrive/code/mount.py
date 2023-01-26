@@ -241,7 +241,7 @@ def run_rclone(arguments, drive, workspace_id, startupinfo=None):
     count_msg = "queuing for upload"
     upload_succeeded_msg = "upload succeeded"
     progress = None
-    global_progress = ap.Progress("Mounting Cloud Drive", show_loading_screen=True)
+    global_progress = ap.Progress("Mounting Cloud THE CLOUD", show_loading_screen=True)
     
     p = subprocess.Popen(
         args=arguments,

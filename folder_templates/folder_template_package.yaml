@@ -15,9 +15,6 @@ action:
   author: Jason Gagnon
   description: Creates standardized project folder structures
  
-  icon:
-    path: "folderTemplates.svg"
-
   platforms:
     - win
 

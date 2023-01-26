@@ -15,9 +15,6 @@ action:
   author: Jason Gagnon
   description: Sets files as approved in the standard folder structure
  
-  icon:
-    path: "folderTemplates.svg"
-
   platforms:
     - win
 

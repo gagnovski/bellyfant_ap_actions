@@ -147,7 +147,7 @@ class CreateFolderTemplate:
 
         self._override_increment = self._dialog.get_value("enable_shotoverride")
 
-        input_value = self._dialog.get_value("name")
+        input_value = self._dialog.get_value("name").replace(" ", "_")
         self._input_name = input_value
         self._variation_name = self._dialog.get_value("variation")
 
